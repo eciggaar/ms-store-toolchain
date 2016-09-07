@@ -1,61 +1,41 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Microservices deployment stage",
+    "title": "Sample Microservices Store Deploy Stage",
     "localized-struct":{
         "$ref": "deploy-localized-struct.json"
     },
-    "description": "Microservices Stage Schema",
+    "description": "Sample Microservices Store toolchain",
     "longDescription": "The Delivery Pipeline automates continuous deployment.",
     "type": "object",
     "properties": {
-        "dev-region": {
+        "prod-region": {
             "description": "The bluemix region",
             "type": "string"
         },
-        "dev-organization": {
+        "prod-organization": {
             "description": "The bluemix org",
             "type": "string"
         },
-       "dev-space": {
+       "prod-space": {
             "description": "The bluemix space",
             "type": "string"
         },
-        "orders-app-name": {
-            "description": "The name of the Microservices Orders API application",
-            "type": "string"
-        },
-       "catalog-app-name": {
-            "description": "The name of the Microservices Catalog API application",
-            "type": "string"
-        },
-       "ui-app-name": {
-            "description": "The name of the Microservices UI application that calls the Orders and Catalog APIs",
+       "prod-app-name": {
+            "description": "The name of your Hello World app",
             "type": "string"
         }
     },
-    "required": ["dev-region", "dev-organization", "dev-space", "orders-app-name", "catalog-app-name", "ui-app-name"],
+    "required": ["prod-region", "prod-organization", "prod-space", "prod-app-name"],
     "form": [
        {
           "type": "validator",
           "url": "/devops/setup/bm-helper/helper.html"
        },        
-       {
-          "type": "text",
-          "readonly": false,
-          "title": "Orders app name",
-          "key": "orders-app-name"
-        },
         {
           "type": "text",
           "readonly": false,
-          "title": "Catalog app name",
-          "key": "catalog-app-name"
-        },
-        {
-          "type": "text",
-          "readonly": false,
-          "title": "UI app name",
-          "key": "ui-app-name"
+          "title": "App name",
+          "key": "prod-app-name"
         },
         {
             "type": "table",
@@ -80,19 +60,19 @@
                 },
                 {
                   "type": "label",
-                  "title": "Development stage"
+                  "title": "Production stage"
                 },
                 {
                   "type": "select",
-                  "key": "dev-region"
+                  "key": "prod-region"
                 },
                 {
                   "type": "select",
-                  "key": "dev-organization"
+                  "key": "prod-organization"
                 },
                 {
                   "type": "select",
-                  "key": "dev-space",
+                  "key": "prod-space",
                   "readonly": false
                 }
             ]

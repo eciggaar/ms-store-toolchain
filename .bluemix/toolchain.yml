@@ -11,23 +11,23 @@ required:
  - github
 
 # Github repos
-catalog-api-repo:
-  service_id: githubpublic
-  parameters:
-    repo_name: "{{github.parameters.catalog-api-repo_name}}"
-    repo_url: "{{github.parameters.catalog-api-repo_url}}"
-    type: clone
-    has_issues: false
-  hidden: [form, description]
-
-orders-api-repo:
-  service_id: githubpublic
-  parameters:
-    repo_name: "{{github.parameters.orders-api-repo_name}}"
-    repo_url: "{{github.parameters.orders-api-repo_url}}"
-    type: clone
-    has_issues: false
-  hidden: [form, description]
+#catalog-api-repo:
+  #service_id: githubpublic
+  #parameters:
+    #repo_name: "{{github.parameters.catalog-api-repo_name}}"
+    #repo_url: "{{github.parameters.catalog-api-repo_url}}"
+    #type: clone
+    #has_issues: false
+  #hidden: [form, description]
+#
+#orders-api-repo:
+  #service_id: githubpublic
+  #parameters:
+    #repo_name: "{{github.parameters.orders-api-repo_name}}"
+    #repo_url: "{{github.parameters.orders-api-repo_url}}"
+    #type: clone
+    #has_issues: false
+  #hidden: [form, description]
 
 ui-repo:
   service_id: githubpublic
@@ -56,38 +56,38 @@ ui-build:
     services: ["ui-repo"]
   hidden: [form, description]
 
-catalog-api-build:
-  service_id: pipeline
-  parameters:
-    name: "catalog-api-{{name}}"
-    configuration:
-      content: $file(catalog-api.pipeline.yml)
-      env:
-        CATALOG_API_REPO: "catalog-api-repo"
-        CF_APP_NAME: "{{deploy.parameters.catalog-app-name}}"
-        DEV_SPACE_NAME: "{{deploy.parameters.dev-space}}"
-        DEV_ORG_NAME: "{{deploy.parameters.dev-organization}}"
-        DEV_REGION_ID: "{{deploy.parameters.dev-region}}"
-      execute: true
-    services: ["catalog-api-repo"]
-  hidden: [form, description]
-
-orders-api-build:
-  service_id: pipeline
-  parameters:
-    name: "orders-api-{{name}}"
-    configuration:
-      content: $file(order-api.pipeline.yml)
-      env:
-        SAUCE_LABS: "test"
-        ORDER_API_REPO: "orders-api-repo"
-        CF_APP_NAME: "{{deploy.parameters.orders-app-name}}"
-        DEV_SPACE_NAME: "{{deploy.parameters.dev-space}}"
-        DEV_ORG_NAME: "{{deploy.parameters.dev-organization}}"
-        DEV_REGION_ID: "{{deploy.parameters.dev-region}}"
-      execute: true
-    services: ["orders-api-repo"]
-  hidden: [form, description]
+#catalog-api-build:
+  #service_id: pipeline
+  #parameters:
+    #name: "catalog-api-{{name}}"
+    #configuration:
+      #content: $file(catalog-api.pipeline.yml)
+      #env:
+        #CATALOG_API_REPO: "catalog-api-repo"
+        #CF_APP_NAME: "{{deploy.parameters.catalog-app-name}}"
+        #DEV_SPACE_NAME: "{{deploy.parameters.dev-space}}"
+        #DEV_ORG_NAME: "{{deploy.parameters.dev-organization}}"
+        #DEV_REGION_ID: "{{deploy.parameters.dev-region}}"
+      #execute: true
+    #services: ["catalog-api-repo"]
+  #hidden: [form, description]
+#
+#orders-api-build:
+  #service_id: pipeline
+  #parameters:
+    #name: "orders-api-{{name}}"
+    #configuration:
+      #content: $file(order-api.pipeline.yml)
+      #env:
+        #SAUCE_LABS: "test"
+        #ORDER_API_REPO: "orders-api-repo"
+        #CF_APP_NAME: "{{deploy.parameters.orders-app-name}}"
+        #DEV_SPACE_NAME: "{{deploy.parameters.dev-space}}"
+        #DEV_ORG_NAME: "{{deploy.parameters.dev-organization}}"
+        #DEV_REGION_ID: "{{deploy.parameters.dev-region}}"
+      #execute: true
+    #services: ["orders-api-repo"]
+  #hidden: [form, description]
 
 #Web IDE
 webide:

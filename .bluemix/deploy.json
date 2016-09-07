@@ -22,7 +22,7 @@
         },
        "prod-app-name": {
             "description": "The name of your Hello World app",
-            "type": "string"
+            "type": "string",
         }
     },
     "required": ["prod-region", "prod-organization", "prod-space", "prod-app-name"],

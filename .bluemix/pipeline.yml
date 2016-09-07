@@ -9,7 +9,7 @@ stages:
   - type: stage
   properties:
   - name: CF_APP_NAME
-    value: ms-ordersAPI-${random-word}
+    value: undefined
     type: text
   - name: APP_URL
     value: undefined

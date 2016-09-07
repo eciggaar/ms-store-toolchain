@@ -14,7 +14,7 @@ required:
 catalog-repo:
   service_id: githubpublic
   parameters:
-    repo_name: "ms-sample-catalog"
+    repo_name: "ms-catalog-${random-word}"
     repo_url: https://github.com/alohr51/Microservices-Catalog.git
     type: clone
     has_issues: false
@@ -66,4 +66,4 @@ deploy:
     prod-region: "{{region}}"
     prod-organization: "{{organization}}"
     prod-space: "{{space}}"
-    prod-app-name: "{{ms-sample-repo.parameters.repo_name}}"
+    prod-app-name: "{{catalog-repo.parameters.repo_name}}"

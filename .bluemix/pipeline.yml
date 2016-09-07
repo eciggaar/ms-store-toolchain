@@ -9,7 +9,7 @@ stages:
   - type: stage
   properties:
   - name: CF_APP_NAME
-    value: undefined
+    value: ms-catalog-${random-word}
     type: text
   - name: APP_URL
     value: undefined

@@ -1,47 +1,71 @@
- {
-  "title": "$deploy.title",
-  "description": "$deploy.description",
-  "longDescription": "$deploy.longDescription",
-  "properties": {
-    "prod-app-name": {
-      "description": "$deploy.appDescription"
-    }
-  },
-  "form": [
-    {
-      
-    },
-    {
-      "title": "$deploy.appName"
-    },
-    {
-      "items": [
-        {
-          
+{
+    "title": "$deploy.title",
+    "description": "$deploy.description",
+    "longDescription": "$deploy.longDescription",
+    "properties": {
+        "orders-app-name": {
+            "description": "$deploy.appDescription1"
         },
-        {
-          "title": "$region"
+       "catalog-app-name": {
+            "description": "$deploy.appDescription2"
         },
-        {
-          "title": "$organization"
-        },
-        {
-          "title": "$space"
-        },
-        {
-          "title": "$prodStage"
-        },
-        {
-          
-        },
-        {
-          
-        },
-        {
-          
+       "ui-app-name": {
+            "description": "$deploy.appDescription3"
         }
-      ]
-    }
-  ]
+    },
+    "form": [
+       {
+       },
+       {
+          "title": "$deploy.appName1"
+        },
+        {
+          "title": "$deploy.appName2"
+        },
+        {
+          "title": "$deploy.appName3"
+        },
+        {
+            "items": [
+                {
+                },
+                {
+                  "title": "$region"
+                },
+                {
+                  "title": "$organization"
+                },
+                {
+                  "title": "$space"
+                },
+                {
+                  "title": "$devStage"
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                  "title": "$testStage"
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                  "title": "$prodStage"
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ]
+        }
+    ]
 }
- 

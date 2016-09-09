@@ -47,7 +47,6 @@ ui-build:
     configuration:
       content: $file(ui.pipeline.yml)
       env:
-        SAUCE_LABS: "test"
         UI_REPO: "ui-repo"
         CF_APP_NAME: "{{deploy.parameters.ui-app-name}}"
         DEV_SPACE_NAME: "{{deploy.parameters.dev-space}}"

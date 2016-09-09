@@ -9,7 +9,7 @@ stages:
   - type: stage
   properties:
   - name: CF_APP_NAME
-    value: undefined
+    value: ${CF_APP_NAME}
     type: text
   - name: APP_URL
     value: undefined

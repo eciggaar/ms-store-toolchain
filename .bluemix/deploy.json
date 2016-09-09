@@ -60,7 +60,7 @@
                 },
                 {
                   "type": "label",
-                  "title": "Production stage"
+                  "title": "Deploy environment"
                 },
                 {
                   "type": "select",

@@ -1,0 +1,34 @@
+---
+stages:
+- name: DEPLOY
+  inputs:
+  - type: job
+    stage: BUILD
+    job: Build
+  triggers:
+  - type: stage
+  properties:
+  - name: CF_APP_NAME
+    value: undefined
+    type: text
+  - name: APP_URL
+    value: undefined
+    type: text
+  jobs:
+  - name: Deploy
+    type: deployer
+    target:
+      region_id: ${PROD_REGION_ID}
+      organization: ${PROD_ORG_NAME}
+      space: ${PROD_SPACE_NAME}
+      application: ${CF_APP_NAME}
+    script: |
+      #!/bin/bash
+      cf create-service cloudantNoSQLDB Shared myMicroservicesCloudant
+      cf create-service service_discovery free myMicroservicesServiceDiscovery
+      # Push app
+      export CF_APP_NAME="dev-$CF_APP"
+      cf push
+      export APP_URL=http://$(cf app $CF_APP_NAME | grep urls: | awk '{print $2}')
+      # View logs
+      #cf logs "${CF_APP_NAME}" --recent

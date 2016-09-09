@@ -14,35 +14,35 @@ required:
 catalog-repo:
   service_id: githubpublic
   parameters:
-    repo_name: "ms-catalog-${random-word}"
+    repo_name: "ms-sample-catalog"
     repo_url: https://github.com/alohr51/Microservices-Catalog.git
     type: clone
     has_issues: false
 
-#orders-repo:
-  #service_id: githubpublic
-  #parameters:
-    #repo_name: "ms-sample-orders"
-    #repo_url: https://github.com/alohr51/Microservices-Orders.git
-    #type: clone
-    #has_issues: false
-#
-#ui-repo:
-  #service_id: githubpublic
-  #parameters:
-    #repo_name: "ms-sample-ui"
-    #repo_url: https://github.com/alohr51/Microservices-UI.git
-    #type: clone
-    #has_issues: false
+orders-repo:
+  service_id: githubpublic
+  parameters:
+    repo_name: "ms-sample-orders"
+    repo_url: https://github.com/alohr51/Microservices-Orders.git
+    type: clone
+    has_issues: false
+
+ui-repo:
+  service_id: githubpublic
+  parameters:
+    repo_name: "ms-sample-ui"
+    repo_url: https://github.com/alohr51/Microservices-UI.git
+    type: clone
+    has_issues: false
 
 # Pipelines
 catalog-build:
   service_id: pipeline
   parameters:
-    name: "ms-sample-{{name}}"
+    name: "ms-catalog"
     ui-pipeline: true
     configuration: 
-     content: $file(pipeline.yml)
+     content: $file(catalog-pipeline.yml)
      env:
       SAMPLE_REPO: "catalog-repo"
       CF_APP_NAME: "{{deploy.parameters.prod-app-name}}"
@@ -51,6 +51,23 @@ catalog-build:
       PROD_REGION_ID: "{{deploy.parameters.prod-region}}"
      execute: true
     services: ["catalog-sample-repo"]
+  hidden: [form, description]
+
+ui-build:
+  service_id: pipeline
+  parameters:
+    name: "ui-catalog"
+    ui-pipeline: true
+    configuration: 
+     content: $file(ui-pipeline.yml)
+     env:
+      SAMPLE_REPO: "ui-repo"
+      CF_APP_NAME: "{{deploy.parameters.prod-app-name}}"
+      PROD_SPACE_NAME: "{{deploy.parameters.prod-space}}"
+      PROD_ORG_NAME: "{{deploy.parameters.prod-organization}}"
+      PROD_REGION_ID: "{{deploy.parameters.prod-region}}"
+     execute: true
+    services: ["ui-sample-repo"]
   hidden: [form, description]
 
 #Web IDE

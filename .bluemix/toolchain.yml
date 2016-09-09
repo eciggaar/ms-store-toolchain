@@ -62,7 +62,7 @@ orders-build:
      content: $file(orders-pipeline.yml)
      env:
       SAMPLE_REPO: "orders-repo"
-      CF_APP_NAME: "{{deploy.parameters.prod-app-name}}"
+      CF_APP_NAME: "orders-{{deploy.parameters.prod-app-name}}"
       PROD_SPACE_NAME: "{{deploy.parameters.prod-space}}"
       PROD_ORG_NAME: "{{deploy.parameters.prod-organization}}"
       PROD_REGION_ID: "{{deploy.parameters.prod-region}}"
@@ -100,4 +100,4 @@ deploy:
     prod-region: "{{region}}"
     prod-organization: "{{organization}}"
     prod-space: "{{space}}"
-    prod-app-name: "{{catalog-repo.parameters.repo_name}}"
+    prod-app-name: "{{name}}"

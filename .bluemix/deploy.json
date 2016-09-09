@@ -4,7 +4,7 @@
     "localized-struct":{
         "$ref": "deploy-localized-struct.json"
     },
-    "description": "Feb Demo Microservices Stage Schema",
+    "description": "Microservices Store Stage Schema",
     "longDescription": "The Delivery Pipeline automates continuous deployment.",
     "type": "object",
     "properties": {
@@ -17,30 +17,6 @@
             "type": "string"
         },
        "dev-space": {
-            "description": "The bluemix space",
-            "type": "string"
-        },
-        "qa-region": {
-            "description": "The bluemix region",
-            "type": "string"
-        },
-        "qa-organization": {
-            "description": "The bluemix org",
-            "type": "string"
-        },
-       "qa-space": {
-            "description": "The bluemix space",
-            "type": "string"
-        },
-        "prod-region": {
-            "description": "The bluemix region",
-            "type": "string"
-        },
-        "prod-organization": {
-            "description": "The bluemix org",
-            "type": "string"
-        },
-       "prod-space": {
             "description": "The bluemix space",
             "type": "string"
         },
@@ -117,40 +93,6 @@
                 {
                   "type": "select",
                   "key": "dev-space",
-                  "readonly": false
-                },
-                {
-                  "type": "label",
-                  "title": "Test stage"
-                },
-                {
-                  "type": "select",
-                  "key": "qa-region"
-                },
-                {
-                  "type": "select",
-                  "key": "qa-organization"
-                },
-                {
-                  "type": "select",
-                  "key": "qa-space",
-                  "readonly": false
-                },
-                {
-                  "type": "label",
-                  "title": "Production stage"
-                },
-                {
-                  "type": "select",
-                  "key": "prod-region"
-                },
-                {
-                  "type": "select",
-                  "key": "prod-organization"
-                },
-                {
-                  "type": "select",
-                  "key": "prod-space",
                   "readonly": false
                 }
             ]

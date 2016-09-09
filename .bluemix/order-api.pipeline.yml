@@ -9,8 +9,15 @@ stages:
   - type: commit
   jobs:
   - name: Build
-    type: builder
-    artifact_dir: ''
+    type: maven
+    artifact_dir: 'target'
+    script: |-
+      #!/bin/bash
+      mvn clean install
+      mkdir -p target/defaultServer/apps
+      mv manifest.yml target/
+      mv server.xml target/defaultServer/
+      mv target/*.war target/defaultServer/apps/
 - name: DEV
   inputs:
   - type: job

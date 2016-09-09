@@ -1,8 +1,27 @@
 ---
 stages:
+- name: BUILD
+  inputs:
+  - type: git
+    branch: master
+    service: ${ORDERS_REPO}
+  triggers:
+  - type: commit
+  jobs:
+  - name: Build
+    type: builder
+  - name: mavenBuild
+    type: maven
+    script: |-
+      #!/bin/bash
+      mvn clean install
+      mkdir -p target/defaultServer/apps
+      mv manifest.yml target/
+      mv server.xml target/defaultServer/
+      mv target/*.war target/defaultServer/apps/
 - name: DEPLOY
   inputs:
-  - type: job
+  - type: git
     stage: BUILD
     job: Build
   triggers:
@@ -24,11 +43,8 @@ stages:
       application: ${CF_APP_NAME}
     script: |
       #!/bin/bash
-      cf create-service elephantsql turtle myMicroservicesSQL
+      cf cs elephantsql turtle myMicroservicesSQL
       cf create-service service_discovery free myMicroservicesServiceDiscovery
-      # Push app
-      export CF_APP_NAME="dev-$CF_APP"
-      cf push
-      export APP_URL=http://$(cf app $CF_APP_NAME | grep urls: | awk '{print $2}')
+      cf push -p defaultServer
       # View logs
       #cf logs "${CF_APP_NAME}" --recent

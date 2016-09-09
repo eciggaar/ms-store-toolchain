@@ -61,7 +61,7 @@ orders-build:
     configuration: 
      content: $file(orders-pipeline.yml)
      env:
-      SAMPLE_REPO: "orders-repo"
+      ORDERS_REPO: "orders-repo"
       CF_APP_NAME: "orders-{{deploy.parameters.prod-app-name}}"
       PROD_SPACE_NAME: "{{deploy.parameters.prod-space}}"
       PROD_ORG_NAME: "{{deploy.parameters.prod-organization}}"

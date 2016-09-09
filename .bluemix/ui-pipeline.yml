@@ -1,6 +1,6 @@
 ---
 stages:
-- name: DEPLOY
+- name: DEPLOY-UI
   inputs:
   - type: job
     stage: BUILD

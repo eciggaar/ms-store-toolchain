@@ -56,7 +56,7 @@ catalog-build:
 ui-build:
   service_id: pipeline
   parameters:
-    name: "ui-catalog"
+    name: "ms-ui"
     ui-pipeline: true
     configuration: 
      content: $file(ui-pipeline.yml)

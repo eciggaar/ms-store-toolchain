@@ -1,6 +1,6 @@
 ---
 stages:
-- name: DEPLOY
+- name: DEPLOY-CATALOG
   inputs:
   - type: job
     stage: BUILD

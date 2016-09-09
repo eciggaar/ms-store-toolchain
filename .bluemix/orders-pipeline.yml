@@ -10,15 +10,26 @@ stages:
   jobs:
   - name: Build
     type: builder
-  - name: mavenBuild
-    type: maven
-    script: |-
-      #!/bin/bash
-      mvn clean install
-      mkdir -p target/defaultServer/apps
-      mv manifest.yml target/
-      mv server.xml target/defaultServer/
-      mv target/*.war target/defaultServer/apps/
+#stages:
+#- name: BUILD
+  #inputs:
+  #- type: git
+    #branch: master
+    #service: ${ORDERS_REPO}
+  #triggers:
+  #- type: commit
+  #jobs:
+  #- name: Build
+    #type: builder
+  #- name: mavenBuild
+    #type: maven
+    #script: |-
+      ##!/bin/bash
+      #mvn clean install
+      #mkdir -p target/defaultServer/apps
+      #mv manifest.yml target/
+      #mv server.xml target/defaultServer/
+      #mv target/*.war target/defaultServer/apps/
 #- name: DEPLOY
   #inputs:
   #- type: job

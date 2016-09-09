@@ -42,7 +42,7 @@ stages:
       application: ${CF_APP_NAME}
     script: |-
       #!/bin/bash
-      cf create-service cloudantNoSQLDB Shared myMicroservicesCloudant
+      cf create-service elephantsql turtle myMicroservicesSQL
       cf create-service service_discovery free myMicroservicesServiceDiscovery
       # Push app
       export CF_APP_NAME="dev-$CF_APP"

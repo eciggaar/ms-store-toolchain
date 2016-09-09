@@ -59,7 +59,7 @@ orders-build:
     name: "ms-orders"
     ui-pipeline: true
     configuration: 
-     content: $file(orders-pipeline.yml)
+     content: $file(orders.pipeline.yml)
      env:
       ORDERS_REPO: "orders-repo"
       CF_APP_NAME: "orders-{{deploy.parameters.prod-app-name}}"

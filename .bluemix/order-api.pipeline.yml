@@ -13,13 +13,11 @@ stages:
     artifact_dir: 'target'
     script: |-
       #!/bin/bash
-      cf create-service cloudantNoSQLDB Shared myMicroservicesCloudant
-      cf create-service service_discovery free myMicroservicesServiceDiscovery
-      # Push app
-      export CF_APP_NAME="dev-$CF_APP"
-      cf push
-      # View logs
-      #cf logs "${CF_APP_NAME}" --recent
+      mvn clean install
+      mkdir -p target/defaultServer/apps
+      mv manifest.yml target/
+      mv server.xml target/defaultServer/
+      mv target/*.war target/defaultServer/apps/
 - name: DEV
   inputs:
   - type: job

@@ -21,7 +21,7 @@ stages:
       mv target/*.war target/defaultServer/apps/
 - name: DEPLOY
   inputs:
-  - type: git
+  - type: job
     stage: BUILD
     job: Build
   triggers:

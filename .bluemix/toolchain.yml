@@ -35,7 +35,7 @@ ui-repo:
     repo_name: "{{github.parameters.ui-repo_name}}"
     repo_url: "{{github.parameters.ui-repo_url}}"
     type: clone
-    has_issues: true
+    has_issues: false
   hidden: [form, description]
 
 # Pipelines

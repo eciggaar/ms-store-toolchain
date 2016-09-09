@@ -37,6 +37,6 @@ stages:
       # Push app
       cf create-service service_discovery free myMicroservicesServiceDiscovery
       export CF_APP_NAME="dev-$CF_APP"
-      cf push "${CF_APP_NAME}"
+      cf push
       # View logs
       #cf logs "${CF_APP_NAME}" --recent

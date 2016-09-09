@@ -8,7 +8,7 @@ version: 0.1
 image: data:image/png;base64,$file(toolchain.png,base64)
 required: 
  - deploy
- - catalog-repo
+ - orders-repo
 
 # Github repos
 #catalog-repo:

@@ -9,7 +9,7 @@ stages:
   - type: commit
   jobs:
   - name: Build
-    type: builder  
+    type: builder
 - name: DEV
   inputs:
   - type: job
@@ -34,7 +34,7 @@ stages:
       application: ${CF_APP_NAME}
     script: |
       #!/bin/bash
-      cf create-service cloudantNoSQLDB Shared myMicroservicesCloudant
+      cf create-service cloudantNoSQLDB Lite myMicroservicesCloudant
       cf create-service service_discovery free myMicroservicesServiceDiscovery
       # Push app
       export CF_APP_NAME="dev-$CF_APP"

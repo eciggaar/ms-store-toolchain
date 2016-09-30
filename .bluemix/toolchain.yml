@@ -1,6 +1,6 @@
 ---
 default_locale: en
-locales: 
+locales:
   $ref: locales.yml
 name: "Microservices toolchain"
 description: "With this cloud-native toolchain, you use a sample to create an online store that consists of three microservices: a Catalog API, an Orders API, and a UI that calls both of the APIs. The toolchain is preconfigured for continuous delivery, source control, blue-green deployment, functional testing, issue tracking, online editing, and messaging.\n\nTo get started, click **Create**."
@@ -35,7 +35,7 @@ ui-repo:
     repo_name: "{{github.parameters.ui-repo_name}}"
     repo_url: "{{github.parameters.ui-repo_url}}"
     type: clone
-    has_issues: false
+    has_issues: true
   hidden: [form, description]
 
 # Pipelines
@@ -115,4 +115,4 @@ github:
     orders-api-repo_name: "orders-api-{{name}}"
     orders-api-repo_url: https://github.com/alohr51/Microservices-Orders.git
     ui-repo_name: "ui-{{name}}"
-    ui-repo_url: https://github.com/alohr51/Microservices-UI.git
+    ui-repo_url: https://github.com/eciggaar/Microservices-UI.git

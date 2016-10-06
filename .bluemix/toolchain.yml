@@ -123,5 +123,5 @@ github:
     orders-api-repo_url: https://github.com/alohr51/Microservices-Orders.git
     #orders-api-repo_url: https://github.com/open-toolchain/Microservices_OrdersAPI
     ui-repo_name: "ui-{{name}}"
-    #ui-repo_url: https://github.com/eciggaar/Microservices-UI.git
-    ui-repo_url: https://github.com/open-toolchain/Microservices_UI
+    ui-repo_url: https://github.com/eciggaar/Microservices-UI.git
+    #ui-repo_url: https://github.com/open-toolchain/Microservices_UI

@@ -12,11 +12,13 @@ After the creation of this toolchain, you can explore the possibilities of the m
 
 <https://www.ibm.com/devops/method/tutorials/tutorial_microservices_part1>
 
-The first part is just for reviewing purposes. Don't click the 'Create toolchain' in part 1. You already did this using the 'Create toolchain' on this page.
+The first part is just for reviewing purposes. Don't click the **Create toolchain** button in part 1. You already did this using the button on this page.
 
 ###Lab 2: From a monolithic application to microservices
 
 The articles below guide you in converting a monolithic application into a microservices based application using Docker and IBM Bluemix. To start, use the button below to deploy the monolithic app in your own Bluemix organization.
+
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://github.com/eciggaar/Microservices)
 
 <http://blog.ibmjstart.net/2015/07/23/learning-microservices-architecture-bluemix-docker-part-1/>
 <http://blog.ibmjstart.net/2015/07/23/learning-microservices-architecture-bluemix-docker-part-2/>

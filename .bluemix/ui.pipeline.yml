@@ -38,8 +38,8 @@ stages:
       cf create-service service_discovery free myMicroservicesServiceDiscovery
       export CF_APP_NAME="dev-$CF_APP"
       echo 'CF_APP_NAME: ' $CF_APP_NAME
-      export APP_URL=http://$(cf app $CF_APP_NAME | grep urls: | awk '{print $2}')
-      echo 'APP_URL: ' $APP_URL
+      #export APP_URL=http://$(cf app $CF_APP_NAME | grep urls: | awk '{print $2}')
+      #echo 'APP_URL: ' $APP_URL
       cf push
       # View logs
       #cf logs "${CF_APP_NAME}" --recent

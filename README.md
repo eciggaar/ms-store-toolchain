@@ -10,6 +10,7 @@ After the creation of this toolchain, you can explore the possibilities of the t
 <https://www.ibm.com/devops/method/tutorials/tutorial_microservices_part1>
 
 The first part is just for reviewing purposes. Don't click the 'Create toolchain' in part 1. You already did this using the 'Create toolchain' on this page.
+
 ---
 ###Learn more
 

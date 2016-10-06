@@ -89,9 +89,14 @@ orders-api-build:
   hidden: [form, description]
 
 #Slack
-#messaging:
-#  service_id: slack
-#  include: slack.yml
+messaging:
+  service_id: slack
+  include: slack.yml
+
+#PagerDuty
+alerting:
+  service_id: pagerduty
+  include: pagerduty.yml  
 
 #Web IDE
 webide:

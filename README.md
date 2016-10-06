@@ -18,7 +18,7 @@ The first part is just for reviewing purposes. Don't click the **Create toolchai
 
 The articles below guide you in converting a monolithic application into a microservices based application using Docker and IBM Bluemix. To start, use the button below to deploy the monolithic app in your own Bluemix organization.
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://github.com/eciggaar/Microservices)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/eciggaar/Microservices)
 
 <http://blog.ibmjstart.net/2015/07/23/learning-microservices-architecture-bluemix-docker-part-1/>
 <http://blog.ibmjstart.net/2015/07/23/learning-microservices-architecture-bluemix-docker-part-2/>

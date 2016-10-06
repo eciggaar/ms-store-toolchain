@@ -39,7 +39,7 @@ stages:
       export CF_APP_NAME="dev-$CF_APP"
       echo 'CF_APP_NAME: ' $CF_APP_NAME
       #export APP_URL=http://$(cf app $CF_APP_NAME | grep urls: | awk '{print $2}')
-      #echo 'APP_URL: ' $APP_URL
-      cf push
+      #echo 'APP_NAME: ' $APP_NAME
+      cf push -n $CF_APP_NAME
       # View logs
       #cf logs "${CF_APP_NAME}" --recent

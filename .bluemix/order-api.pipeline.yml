@@ -47,5 +47,6 @@ stages:
       # Push app
       export CF_APP_NAME="dev-$CF_APP"
       cf push -p defaultServer
+      cf restart MicroservicesOrdersAPI
       # View logs
       #cf logs "${CF_APP_NAME}" --recent

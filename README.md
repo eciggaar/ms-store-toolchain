@@ -5,6 +5,11 @@ Get started with this sample, which is an online store that consists of three mi
 ###To get started, click this button:
 [![Deploy To Bluemix](https://new-console.ng.bluemix.net/devops/graphics/create_toolchain_button.png)](https://new-console.ng.bluemix.net/devops/setup/deploy/?repository=https%3A//github.com/eciggaar/ms-store-toolchain.git)
 
+After the creation of this toolchain, you can explore the possibilities of the toolchain via the tutorial listed below:
+
+<https://www.ibm.com/devops/method/tutorials/tutorial_microservices_part1>
+
+The first part is just for reviewing purposes. Don't click the 'Create toolchain' in part 1. You already did this using the 'Create toolchain' on this page.
 ---
 ###Learn more
 
